@@ -170,11 +170,19 @@ Author
 Version
 =======
 
-* Version: 0.4.1
+* Version: 0.4.2
 * Release Date: 2015-05-08
 
 Revision History
 ================
+
+Version 0.4.2
+-------------
+
+* Release Date: 2015-05-08
+* Notes:
+    * Updated MANIFEST to ensure README.md is included in package
+
 
 Version 0.4.1
 -------------
