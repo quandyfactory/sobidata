@@ -3,7 +3,7 @@
 
 """Download your Social Bicycles (SoBi) route data and save it locally in various formats."""
 
-__version__ = '0.4.5'
+__version__ = '0.5'
 version = __version__
 
 import csv
@@ -38,6 +38,8 @@ class Sobi(object):
                 'distinct_bikes': 0,
                 'distinct_hubs': 0,
                 'total_routes': 0,
+                'avg_distance_per_route_km': 0,
+                'avg_distance_per_route_miles': 0,
             }
         }
         self.datetime_format = '%Y-%m-%dT%H:%M:%SZ'
@@ -60,12 +62,13 @@ class Sobi(object):
 
     def get_request(self, url):
         polite = self.polite
-        auth=self.auth
-        if not auth:
-            self.make_auth()
+        self.make_auth()
         if polite == True: # wait before making the next query
             time.sleep(random.randrange(3)) 
-        return requests.get(url, auth=auth)
+        response = requests.get(url, auth=self.auth)
+        if response.status_code != 200:
+            raise ValueError('HTTP Response code %s: %s' % (response.status_code, response.json()['error']))
+        return response
 
     def get_data(self, page=1):
         if not self.auth:
@@ -189,6 +192,8 @@ class Sobi(object):
         self.data['totals']['distinct_bikes'] = len(self.data['bikes'])
         self.data['totals']['distinct_hubs'] = len(self.data['hubs'])
         self.data['totals']['total_routes'] = len(self.data['routes'])
+        self.data['totals']['avg_distance_per_route_km'] = round(self.data['totals']['total_distance_km'] / self.data['totals']['total_routes'], 2)
+        self.data['totals']['avg_distance_per_route_miles'] = round(self.data['totals']['total_distance_miles'] / self.data['totals']['total_routes'], 2)
 
     def convert_miles_to_km(self, miles):
         return round(miles * 1.60934, 2)

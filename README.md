@@ -175,11 +175,20 @@ Author
 Version
 =======
 
-* Version: 0.4.5
+* Version: 0.5
 * Release Date: 2015-05-08
 
 Revision History
 ================
+
+Version 0.5
+-----------
+
+* Release Date: 2015-05-08
+* Notes:
+    * Added `avg_distance_per_route_km` and `avg_distance_per_route_miles` to totals
+    * Automatically regenerate `auth` for each request
+    * `make_request()` checks response status_code and raise exception if not 200
 
 Version 0.4.5
 -------------
