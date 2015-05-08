@@ -35,6 +35,11 @@ Alternately, you can download the tarballed installer - `sobidata-[VERSION].tar.
     
 That should be all you need to do.
 
+Dependencies
+------------
+
+This package has a few dependencies: `dicttoxml`, `openpyxl` and `requests`. If you use pip, the installer will pull in any dependencies you don't already have installed. If you use easy_install or direct download, you will need to ensure that you have the dependencies installed already.
+
 Basic Usage
 ===========
 
@@ -170,11 +175,18 @@ Author
 Version
 =======
 
-* Version: 0.4.4
+* Version: 0.4.5
 * Release Date: 2015-05-08
 
 Revision History
 ================
+
+Version 0.4.5
+-------------
+
+* Release Date: 2015-05-08
+* Notes:
+    * Updated README to clarify note on installation and dependencies
 
 Version 0.4.4
 -------------
@@ -227,15 +239,15 @@ Version 0.2
 
 * Release Date: 2015-05-06
 * Notes:
-    * Dropped and recreated repository.
+    * Dropped and recreated repository
 
 Version 0.1
 -----------
 
 * Release Date: 2015-05-06
 * Notes:
-    * First commit.
-    * Thanks to [parlarjb](https://gist.github.com/parlarjb) for looking at an [early gist](https://gist.github.com/quandyfactory/08125fe3050a563d55c3) and offering some helpful suggestions to clean up the code.
+    * First commit
+    * Thanks to [parlarjb](https://gist.github.com/parlarjb) for looking at an [early gist](https://gist.github.com/quandyfactory/08125fe3050a563d55c3) and offering some helpful suggestions to clean up the code
 
 Copyright and Licence
 =====================
