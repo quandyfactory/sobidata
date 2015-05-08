@@ -3,7 +3,7 @@
 
 """Download your Social Bicycles (SoBi) route data and save it locally in various formats."""
 
-__version__ = '0.4.3'
+__version__ = '0.4.4'
 version = __version__
 
 import csv

@@ -1,13 +1,18 @@
 from distutils.core import setup
 
-version = '0.4.3'
+version = '0.4.4'
 
-with open('README.md') as readme:
-    # load long_description into memory
-    long_description = readme.read()
-    # save README (no extension) for pypi
-    with open('README', 'w') as myfile:
-        myfile.write(long_description)
+long_description = ''
+try:
+    with open('README.md') as readme:
+        # load long_description into memory
+        long_description = readme.read()
+        # save README (no extension) for pypi
+        with open('README', 'w') as myfile:
+            myfile.write(long_description)
+except IOError:
+    with open('README') as readme:
+        long_description = readme.read()
 
 setup(
     name = 'sobidata',

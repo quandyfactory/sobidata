@@ -170,11 +170,18 @@ Author
 Version
 =======
 
-* Version: 0.4.3
+* Version: 0.4.4
 * Release Date: 2015-05-08
 
 Revision History
 ================
+
+Version 0.4.4
+-------------
+
+* Release Date: 2015-05-08
+* Notes:
+    * Updated setup.py so it pulls long_description from README
 
 Version 0.4.3
 -------------
