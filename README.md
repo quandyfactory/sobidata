@@ -62,11 +62,7 @@ Call the `get_data()` method to download and process the data.
 
     >>> sobi.get_data()
 
-It will take a few moments to download all the data. 
-
-Specify a destination path to save the data.
-
-    >>> sobi.path = '/path/to/sobi/download/files'
+It will take a few moments to download all the data.
 
 Save Your Data
 --------------
@@ -74,6 +70,10 @@ Save Your Data
 Export and save the data locally.
 
     >>> sobi.save_data()
+
+The default save location is the current directory. Specify a destination path to save the data.
+
+    >>> sobi.path = '/path/to/sobi/download/files'
 
 If you call `save_data()` without any parameters, it saves the data in JSON format under the filename:
 
