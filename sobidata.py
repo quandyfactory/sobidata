@@ -11,6 +11,7 @@ import datetime
 import json
 import logging
 import openpyxl
+import os
 import random
 import requests
 import time
@@ -201,9 +202,9 @@ class Sobi(object):
     def get_sorted_keys(self, dictionary):
         return sorted(dictionary.keys())
 
-    def save_data(self, ext='json'):
+    def save_data(self, ext='json', name='sobidata_export'):
         ext = ext.lower()
-        filename = '%s/sobidata_export.%s' % (self.path, ext)
+        filename = os.path.join(self.path, name + '.' + ext)
         contents = self.export_data(self.data, ext)
         with open(filename, 'w') as myfile:
             myfile.write(contents)

@@ -85,6 +85,10 @@ You can also save in several other formats by specifying the format as an option
     >>> sobi.save_data('xlsx') # Excel 2007 format via openpyxl module
     >>> sobi.save_data('csv') # CSV format - only saves routes
 
+You can also specify a name for file with the saved data by passing the optional `name` argument:
+    >>> sobi.save_data(name='hubs') # save to hubs.json
+    >>> sobi.save_data('csv', 'routes') # save to routes.csv
+
 Polite Mode
 -----------
 
