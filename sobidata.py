@@ -26,6 +26,10 @@ class Sobi(object):
         self.password=''
         self.path=''
         self.auth = None
+        self.request_params = {
+            'Application-Name': 'sobidata',
+            'Application-Version': version
+        }
         self.data = {
             'routes': [],
             'bikes': [],
@@ -66,7 +70,7 @@ class Sobi(object):
         self.make_auth()
         if polite == True: # wait before making the next query
             time.sleep(random.randrange(3)) 
-        response = requests.get(url, auth=self.auth)
+        response = requests.get(url, auth=self.auth, params=self.request_params)
         if response.status_code != 200:
             raise ValueError('HTTP Response code %s: %s' % (response.status_code, response.json()['error']))
         return response
