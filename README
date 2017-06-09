@@ -6,7 +6,7 @@ Download your Social Bicycles (SoBi) route data and save it locally in various f
 Details
 =======
 
-The `sobidata` module allows you to download your [Social Bicycles](https://app.socialbicycles.com) (SoBi) route data via the applications web API and save it locally in a variety of file formats.
+The `sobidata` module allows you to download your [Social Bicycles](https://app.socialbicycles.com) (SoBi) route data via the application's web API and save it locally in a variety of file formats.
 
 The module uses the `requests` library to download collections of routes from the SoBi HTTP REST API using HTTP Basic Authentication, as outlined in the [SoBi API documentation](https://app.socialbicycles.com/developer/).
 
@@ -94,7 +94,7 @@ Polite Mode
 
 Under normal functioning, this module makes a series of HTTP requests to the SoBi API with no delay. However, you can enable polite mode by setting `polite` to `True`:
 
-    >>> sobi.polie = True
+    >>> sobi.polite = True
 
 When you enable polite mode, the module introduces a 0-3 second delay (chosen randomly) between each HTTP request. That way, the load on the SoBi API endpoint is reduced.
 
@@ -112,7 +112,7 @@ The local data is stored in a dictionary. If you want to view/manipulate the dat
 
 The `data['bikes']` item is a list of dictionaries with the following keys: `bike_id`, `bike_name`.
 
-The `data['hubs']` item is a list of dictionaries with the following keys: `hub_id', `hub_address`.
+The `data['hubs']` item is a list of dictionaries with the following keys: `hub_id`, `hub_address`.
 
 The `data['routes']` item is a list of dictionaries with the following keys: `bike_id`, `bike_name`, `distance_km`, `distance_miles`, `duration`, `duration_hh_mm_ss`, `finish_time`, `first_location_address`, `from_hub_address`, `from_hub_id`, `route_id`, `start_time`, `to_hub_address`, `to_hub_id`.
 
