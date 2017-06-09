@@ -24,7 +24,7 @@ class Sobi(object):
     def __init__(self):
         self.username=''
         self.password=''
-        self.path=''
+        self.path='.'
         self.auth = None
         self.request_params = {
             'Application-Name': 'sobidata',
